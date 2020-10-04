@@ -8,4 +8,4 @@ class Review(models.Model):
     approved = models.BooleanField(default=True)
 
     def __str__(self):
-        return self.usuario.first_name
+        return self.user.first_name
