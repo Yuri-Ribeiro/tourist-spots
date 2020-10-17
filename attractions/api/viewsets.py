@@ -3,6 +3,6 @@ from attractions.models import Attraction
 from .serializers import AttractionSerializer
 
 
-class AttractionsViewSet(ModelViewSet):
+class AttractionViewSet(ModelViewSet):
     queryset = Attraction.objects.all()
     serializer_class = AttractionSerializer
