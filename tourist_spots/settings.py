@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'tourist_spots_core',
     'attractions',
     'reviews',
-    'comments'
+    'comments',
+    'addresses'
 ]
 
 MIDDLEWARE = [
