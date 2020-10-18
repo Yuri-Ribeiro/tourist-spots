@@ -109,3 +109,5 @@ media/
 
 .idea
 secret_settings.py
+
+photos/
