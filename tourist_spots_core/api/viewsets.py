@@ -14,3 +14,6 @@ class TouristSpotViewSet(ModelViewSet):
 
     # def create(self, request, *args, **kwargs):
     #     return Response({'message': f'Olá  {request.data["name"]}'})
+
+    # def destroy(self, request, *args, **kwargs):
+    #     pass
