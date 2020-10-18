@@ -1,4 +1,5 @@
 # from rest_framework.response import Response
+from rest_framework.decorators import action
 from rest_framework.viewsets import ModelViewSet
 from tourist_spots_core.models import TouristSpot
 from .serializers import TouristSpotSerializer
@@ -26,3 +27,11 @@ class TouristSpotViewSet(ModelViewSet):
 
     # def partial_update(self, request, *args, **kwargs):
     #     pass
+
+    @action(methods=['get'], detail=True)
+    def report(self, request, pk=None):
+        pass
+
+    @action(methods=['get'], detail=False)
+    def test(self, request):
+        pass
