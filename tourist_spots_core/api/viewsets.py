@@ -9,6 +9,19 @@ class TouristSpotViewSet(ModelViewSet):
 
     def get_queryset(self):
         return TouristSpot.objects.filter(approved=True)
+        # id = self.request.query_params.get('id', None)
+        # name = self.request.query_params.get('name', None)
+        # description = self.request.query_params.get('description', None)
+        # queryset = TouristSpot.objects.all()
+        #
+        # if id:
+        #     queryset = TouristSpot.objects.filter(pk=id)
+        # if name:
+        #     queryset = queryset.filter(name__iexact=name)
+        # if description:
+        #     queryset = queryset.filter(description__iexact=description)
+        #
+        # return queryset
 
     def list(self, request, *args, **kwargs):
         return super(TouristSpotViewSet, self).list(request, *args, **kwargs)
