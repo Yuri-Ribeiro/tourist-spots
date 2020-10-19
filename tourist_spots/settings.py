@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'django_filters',
     'tourist_spots_core',
     'attractions',
     'reviews',
@@ -127,4 +128,9 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 MEDIA_ROOT = 'photos'
+
 MEDIA_URL = '/media/'
+
+# REST_FRAMEWORK = {
+#     'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']
+# }
