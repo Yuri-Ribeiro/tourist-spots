@@ -9,6 +9,7 @@ class TouristSpotViewSet(ModelViewSet):
     serializer_class = TouristSpotSerializer
     filter_backends = [SearchFilter]
     search_fields = ['name', 'description', 'address__line1']
+    lookup_field = 'name'
 
     def get_queryset(self):
         return TouristSpot.objects.filter(approved=True)
