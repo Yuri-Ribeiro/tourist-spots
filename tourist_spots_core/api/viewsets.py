@@ -1,11 +1,14 @@
 # from rest_framework.response import Response
 # from rest_framework.decorators import action
+from rest_framework.filters import SearchFilter
 from rest_framework.viewsets import ModelViewSet
 from tourist_spots_core.models import TouristSpot
 from .serializers import TouristSpotSerializer
 
 class TouristSpotViewSet(ModelViewSet):
     serializer_class = TouristSpotSerializer
+    filter_backends = [SearchFilter]
+    search_fields = ['name', 'description', 'address__line1']
 
     def get_queryset(self):
         return TouristSpot.objects.filter(approved=True)
