@@ -2,7 +2,7 @@
 # from rest_framework.decorators import action
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.filters import SearchFilter
-from rest_framework.permissions import IsAuthenticated, IsAdminUser
+from rest_framework.permissions import IsAuthenticated, IsAdminUser, IsAuthenticatedOrReadOnly, DjangoModelPermissions
 from rest_framework.viewsets import ModelViewSet
 from tourist_spots_core.models import TouristSpot
 from .serializers import TouristSpotSerializer
@@ -12,7 +12,7 @@ class TouristSpotViewSet(ModelViewSet):
     filter_backends = [SearchFilter]
     search_fields = ['name', 'description', 'address__line1']
     lookup_field = 'id'
-    permission_classes = (IsAuthenticated,)
+    permission_classes = (IsAuthenticatedOrReadOnly,)
     authentication_classes = (TokenAuthentication,)
 
     def get_queryset(self):
