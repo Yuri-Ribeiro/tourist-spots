@@ -108,6 +108,5 @@ media/
 *.pid
 
 .idea
-secret_settings.py
 
 photos/
